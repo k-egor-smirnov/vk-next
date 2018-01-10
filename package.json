@@ -1,0 +1,22 @@
+{
+  "name": "vk-next",
+  "version": "0.0.1",
+  "description": "VK API Library based on code generation with bots support",
+  "main": "lib/index.js",
+  "scripts": {
+    "postinstall": "node ./api-schema/GenerateModels",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "k.egor.smirnov",
+  "license": "MIT",
+  "dependencies": {
+    "escodegen": "^1.9.0",
+    "json-schema-ref-parser": "^4.0.4",
+    "mkdirp": "^0.5.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0"
+  }
+}

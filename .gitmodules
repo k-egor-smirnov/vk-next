@@ -1,0 +1,3 @@
+[submodule "api-schema/vk-api-schema"]
+	path = api-schema/vk-api-schema
+	url = https://github.com/VKCOM/vk-api-schema.git

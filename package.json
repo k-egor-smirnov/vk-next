@@ -7,6 +7,9 @@
     "postinstall": "node ./api-schema/GenerateModels",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "url": "https://github.com/k-egor-smirnov/vk-next.git"
+  },
   "author": "k.egor.smirnov",
   "license": "MIT",
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "vk-next",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VK API Library based on code generation with bots support",
   "main": "lib/index.js",
   "scripts": {

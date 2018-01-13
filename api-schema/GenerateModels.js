@@ -87,9 +87,9 @@ function generateDir (
 
   let apiClassCode = codeGenerate.generateAPIClass(categories)
 
-  fs.writeFile(path.join(apiPath, '..', 'index.js'), apiClassCode, err => {
+  fs.writeFile(path.join(apiPath, '..', 'API.js'), apiClassCode, err => {
     if (err) console.log(err)
 
-    console.log('index.js generated')
+    console.log('API.js generated')
   })
 })()

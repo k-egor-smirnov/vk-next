@@ -81,12 +81,11 @@ function generateFunction (methodName, method) {
 function generateImports (categories) {
   let code = ''
 
-  code += 'const bindMethods = require("./bindMethods")\n'
-  code += 'const api = require("./api")\n'
+  code += "const bindMethods = require('./bindMethods')\n"
 
   let categoriesName = Object.keys(categories)
   categoriesName.map(categoryName => {
-    code += `const ${categoryName} = require("./methods/${replaceAt(categoryName, 0, categoryName[0].toUpperCase())}")\n`
+    code += `const ${categoryName} = require('./methods/${replaceAt(categoryName, 0, categoryName[0].toUpperCase())}')\n`
   })
 
   return code
@@ -109,24 +108,25 @@ function generateAPIClass (categories) {
   code += tab('}\n\n', 1)
 
   // Generate init
-  code += tab('init (){\n', 1)
+  code += tab('init (queue) {\n', 1)
 
-  code += tab('for (let category of Object.keys(this)){\n', 2)
+  code += tab('for (let category of Object.keys(this)) {\n', 2)
 
-  code += tab('if (category !== "token"){\n', 3)
+  code += tab('if (category !== "token") {\n', 3)
 
   code += tab('this[category] = bindMethods.call(this, this[category])\n', 4)
 
   code += tab('}\n', 3)
 
   code += tab('}\n', 2)
+  code += tab('this.queue = queue\n', 2)
 
   code += tab('}\n\n', 1)
 
   // Generate API call
   code += tab('_call (...params) {\n', 1)
 
-  code += tab('return api.call(this, ...params)\n', 2)
+  code += tab('return this.queue.add(...params)\n', 2)
 
   code += tab('}\n', 1)
 

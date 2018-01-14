@@ -1,11 +1,14 @@
 {
   "name": "vk-next",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VK API Library based on code generation with bots support",
   "main": "lib/index.js",
   "scripts": {
     "postinstall": "node ./api-schema/GenerateModels",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/k-egor-smirnov/vk-next.git"
   },
   "author": "k.egor.smirnov",
   "license": "MIT",

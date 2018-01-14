@@ -1,6 +1,8 @@
 # VK-Next
 > Библиотека для ВК, основанная на кодогенерации методов API с поддержкой удобного написания ботов
 
+[![npm](https://img.shields.io/npm/v/vk-next.svg)](https://www.npmjs.com/package/vk-next)
+
 ## Roadmap
 - Поддержка VK API ✅
 - Удобный интерфейс для ботов

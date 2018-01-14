@@ -151,10 +151,10 @@ function tab (code, n) {
   return '  '.repeat(n) + code
 }
 
-function toRightType (param, string) {
-  if (param.type === 'string') return `"${string}"`
-  return string
-}
+// function toRightType (param, string) {
+//   if (param.type === 'string') return `"${string}"`
+//   return string
+// }
 
 module.exports = {
   generate: generate,

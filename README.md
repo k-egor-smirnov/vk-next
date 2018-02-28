@@ -1,12 +1,77 @@
 # VK-Next
-> Библиотека для ВК, основанная на кодогенерации методов API с поддержкой удобного написания ботов
+> Библиотека для VK API, поддерживающая LongPoll API, новый Bot LongPoll API и Callback API, основанная на кодогенерации методов из JSON схемы
+С данной библиотекой вы можете как создавать ботов, так и сделать свой клиент благодаря полной поддержке всего API
 
 [![npm](https://img.shields.io/npm/v/vk-next.svg)](https://www.npmjs.com/package/vk-next)
+
+# Внимание
+* Библиотека вероятнее всего будет менять архитектуру до релиза стабильной версии 1.0.0 и сейчас активно дорабатывается и рефакторится
+* Документация еще не заполнена полностью, по всем вопросам пишите в чаты библиотеки:
+  * https://t.me/vknext
+  * https://vk.me/join/AJQ1d8yOLAN7dEz4zzRnqEyM
 
 ## Roadmap
 - Поддержка VK API ✅
 - Удобный интерфейс для ботов
+  - Роуты для сообщений ✅
+  - Хранилище сессий
+  - Локализация
 - Утилиты для работы (генерация битовой маски, ссылки для токена)
+
+## Настройка
+
+## Получение сообщений
+В данный момент библиотека поддерживает 2 типа получения событий: Bot Longpoll API и Longpoll API, в будущем будет поддержка Callback API
+
+Пример для Bot Longpoll API 
+```javascript
+vk.on('message_new', (ctx, message) => {
+  console.log('new message: ' + message.body)
+})
+```
+
+Пример для Longpoll API
+```javascript
+vk.on(4, (ctx, message) => {
+  console.log('new message: ' + message.text)
+})
+```
+
+## Роутинг
+Пример роута
+
+```javascript
+const { BaseRoute } = require('vk-next')
+
+class TestRoute extends BaseRoute {
+  test (ctx, message) {
+    ctx.api.messages.send({
+      peer_id: ctx.userId,
+      message: 'Test!'
+    })
+  }
+
+  default (ctx, message) {
+    ctx.api.messages.send({
+      peer_id: ctx.userId,
+      message: 'You wrote: ' + message.text
+    })
+  }
+
+  get commands () {
+    return {
+      '/test': 'test',
+    }
+  }
+}
+
+module.exports = TestRoute
+```
+
+
+```javascript
+ctx.use(TestRoute)
+```
 
 ## LICENSE
 The MIT License (MIT)

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6"
+    },
+    "include": [
+        "lib/api/methods/*",
+        "lib/api/index.js"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

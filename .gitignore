@@ -4,3 +4,4 @@ api-schema/api
 lib/api/methods
 
 lib/api/index.js
+example.js

@@ -4,7 +4,6 @@
   "description": "VK API Library based on code generation with bots support",
   "main": "lib/index.js",
   "scripts": {
-    "postinstall": "node ./api-schema/GenerateModels",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,6 +12,7 @@
   "author": "k.egor.smirnov",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "json-schema-ref-parser": "^4.0.4",
     "mkdirp": "^0.5.1",
     "nanoid": "^1.0.1",

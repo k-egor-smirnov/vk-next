@@ -3,5 +3,5 @@ node_modules/
 api-schema/api
 lib/api/methods
 
-example.js
+example*.js
 yarn-error.log

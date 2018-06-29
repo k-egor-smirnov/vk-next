@@ -1,7 +1,7 @@
 {
-    "include": [
-        "lib/**/*"
-    ],
+    "compilerOptions": {
+        "module": "commonjs"
+    },
     "exclude": [
         "node_modules"
     ]

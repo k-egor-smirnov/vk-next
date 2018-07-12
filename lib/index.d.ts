@@ -29,7 +29,7 @@ interface IBaseQueue {}
 export declare class Next {
   constructor(token: string, queue: IBaseQueue, options: { isGroup: boolean });
   startPooling();
-  startBotPooling(groupId: number);
+  startBotPolling(groupId: number);
   on(event: string, callback: (ctx: IContext) => any);
 }
 
